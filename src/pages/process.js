@@ -6,20 +6,20 @@ import { Container } from 'react-bootstrap';
 import SEO from "../components/SEO"
 import CardBlock from "../components/shared/CardBlock"
 
-const About = () => {
+const Process = () => {
   const data = useStaticQuery(query)
-  const items = data.allContentfulGioiThieu.nodes
+  const items = data.allContentfulQuyTrinh.nodes
   const headerText= "GIỚI THIỆU VỀ CÔNG TY SƠN TÙNG"
 
   return (
     <Layout>
-      <SEO title="About" />
+      <SEO title="Process" />
       <main className="page">
         <header>
           <div className='headBodyWrapper'>
             <StaticImage
               className='headerSliderImage'
-              src='../assets/images/gioi_thieu.png'
+              src='../assets/images/quy_trinh.png'
               alt={headerText}
               placeholder="blurred"
               layout="CONSTRAINED"
@@ -39,7 +39,7 @@ const About = () => {
 
 export const query = graphql`
   {
-    allContentfulGioiThieu(sort: {fields: position}) {
+    allContentfulQuyTrinh(sort: {fields: position}) {
       nodes {
         title
         description {
@@ -53,4 +53,4 @@ export const query = graphql`
   }
 `
 
-export default About
+export default Process

@@ -4,15 +4,15 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Non Bao Hiem Son Tung`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Phong Vuong`,
+      summary: `Contact me through phong.vuong008@gmail.com`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `Non bao hiem chat luong cao`,
+    siteUrl: `https://nonbaohiemst.com/`,
     social: {
-      twitter: `kylemathews`,
+      facebook: `ctysontung`,
     },
   },
   plugins: [
@@ -52,7 +52,7 @@ module.exports = {
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/sontungicon.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-react-helmet`,

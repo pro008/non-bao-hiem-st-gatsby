@@ -1,11 +1,15 @@
-import React from "react"
-import Navbar from "./Navbar"
-import Footer from "./Footer"
+import React, { useEffect } from "react"
+import Header from './header'
+import Footer from "./footer"
 
 const Layout = ({ children }) => {
+  useEffect(() => {
+    import("../utils/navbar.js");
+  }, []);
+  
   return (
     <>
-      <Navbar />
+      <Header />
       {children}
       <Footer />
     </>
