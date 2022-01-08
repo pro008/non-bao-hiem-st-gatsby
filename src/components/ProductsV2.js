@@ -6,10 +6,13 @@ import { Container, Row, Col } from 'react-bootstrap';
 import styled from "styled-components"
 
 const ProductsV2 = ({ produtcs = [] }) => {
+  if(produtcs == null)
+    return (<></>)
+      
   return (
     <Wrapper>
-      {produtcs.map(recipe => {
-        const { id, title, mainImage } = recipe
+      {produtcs.map(product => {
+        const { id, title, mainImage } = product
         const pathToImage = getImage(mainImage)
         const slug = slugifyUrl(title)
         return (

@@ -1,18 +1,55 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import { GatsbyImage, StaticImage, getImage } from "gatsby-plugin-image"
-import { BsClockHistory, BsClock, BsPeople } from "react-icons/bs"
+import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
+import { Row, Col, Container } from 'react-bootstrap';
+import Carousel from 'react-multi-carousel'
+import SliderDetail from '../components/shared/slider_detail'
+import NormalSlider from '../components/shared/NormalSlider'
 import Layout from "../components/Layout"
 import slugify from "slugify"
 import SEO from "../components/SEO"
+import styled from "styled-components"
+import textSplit from '../utils/textSlipt'
+import ProductsV2 from "../components/ProductsV2"
 
 const ProductTemplate = ({ data }) => {
   const {
     title,
     description: { description },
     mainImage,
+    contentImages,
+    clientImages,
+    relativeProducts
   } = data.contentfulProducts
+  // will delete
   const pathToImage = getImage(mainImage)
+  let images = [getImage(mainImage)]
+
+  if(contentImages != null){
+    contentImages.map( image => {
+      const subImagePth = getImage(image)
+      images.push(subImagePth)
+    })
+  }
+
+  const responsive = {
+    superLargeDesktop: {
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 1
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 1
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1
+    }
+  }
 
   return (
     <Layout>
@@ -32,21 +69,52 @@ const ProductTemplate = ({ data }) => {
             </div>
           </div>
         </header>
-        <div className="recipe-page div-center">
-          {/* hero */}
-          <section className="recipe-hero">
-            <GatsbyImage
-              image={pathToImage}
-              alt={title}
-              className="about-img"
-            />
-            <article className="recipe-info">
-              <h2>{title}</h2>
-              <p>{description}</p>
-            </article>
-          </section>
-          {/* rest of the content */}
-        </div>
+        <section className="bg-light-grey">
+          <Container>
+            <Row>
+              <Col xs={12} md={5} className="mb-20">
+                <SliderDetail
+                  images={images}
+                />
+              </Col>
+              <Col xs={12} md={7}>
+                <article>
+                  <h5>MÃ SẢN PHẨM: {title}</h5>
+                  <HorizonUnderline />
+                  <h5>MÔ TẢ CHI TIẾT</h5>
+                  <p>{textSplit(description).map((e, i) => {
+                    return(<>{e}<br /></>)
+                  })}</p>
+                </article>
+              </Col>
+            </Row>
+          </Container>
+        </section>
+
+        <section>
+          <Container>
+            <Row>
+              <Col xs={12} md={7}>
+                <article>
+                  <h5>SẢN PHẨM CỦA KHÁCH HÀNG</h5>
+                  <h5>MÔ TẢ CHI TIẾT</h5>
+                  <p>ST Helmet đã tạo dựng uy tín hơn 10 năm trong lĩnh vực sản xuất nón bảo hiểm về chất lượng sản phẩm và dịch vụ. ST Helmet đã trở thành nhà cung cấp sản phẩm cho rất nhiều doanh nghiệp trong nước lẫn ngoài nước.</p>
+                </article>
+              </Col>
+              <Col xs={12} md={5}>
+                <NormalSlider 
+                  images={clientImages}
+                  needParse={true}
+                />
+              </Col>
+            </Row>
+          </Container>
+        </section>
+
+        <section>
+          <h5><center>SẢN PHẨM KHÁC</center></h5>
+          <ProductsV2 produtcs={relativeProducts} /> }
+        </section>
       </main>
     </Layout>
   )
@@ -60,10 +128,30 @@ export const query = graphql`
         description
       }
       mainImage {
+        gatsbyImageData(width: 550, height: 550, layout: CONSTRAINED, placeholder: TRACED_SVG)
+      }
+      contentImages {
+        gatsbyImageData(width: 550, height: 550, layout: CONSTRAINED, placeholder: TRACED_SVG)
+      }
+      clientImages {
         gatsbyImageData(width: 330, height: 330, layout: CONSTRAINED, placeholder: TRACED_SVG)
+      }
+      relativeProducts {
+        id
+        title
+        mainImage {
+          gatsbyImageData(width: 220, height: 220, layout: CONSTRAINED, placeholder: TRACED_SVG)
+        }
       }
     }
   }
+`
+
+const HorizonUnderline = styled.hr`
+  border: 2px solid black;
+  width: 25%;
+  margin-top: 20px;
+  margin-bottom: 50px;
 `
 
 export default ProductTemplate
