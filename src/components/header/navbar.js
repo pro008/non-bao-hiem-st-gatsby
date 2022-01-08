@@ -1,64 +1,67 @@
-import React, { useEffect, useState } from 'react';
-import { Navbar, Nav, Container, Button } from 'react-bootstrap';
+import React, { useState } from "react"
 import { Link } from "gatsby"
-import styled from "styled-components"
 
 const MAX_SCROLL = 0
 const MIN_SCROLL = 100
 let counter = MIN_SCROLL
 
 const NavigationBar = () => {
-  const navigation_list = ["Giới thiệu", "Quy trình", "Khách hàng", "Tin tức", "Liên hệ"]
-  const [isActive, setActive] = useState(false);
+  const [isActive, setActive] = useState(false)
 
-  let navbar_collapse_overlay, navbar_collapse, navbar_holder, navbar_holder_scrollder
+  let navbar_collapse_overlay,
+    navbar_collapse,
+    navbar_holder,
+    navbar_holder_scrollder
 
-  function handleAnimation(translate, opacity){
+  function handleAnimation(translate, opacity) {
     navbar_collapse_overlay.style.transform = translate
     navbar_collapse.style.transform = translate
-    if (opacity > 0.9)
-      navbar_holder_scrollder.style.opacity = opacity
-    else
-      navbar_holder_scrollder.style.opacity = 0
+    if (opacity > 0.9) navbar_holder_scrollder.style.opacity = opacity
+    else navbar_holder_scrollder.style.opacity = 0
   }
 
   function handleActiveNav(is_active) {
     setActive(is_active)
-    navbar_collapse_overlay = document.getElementsByClassName('navbar-collapse__overlay')[0]
-    navbar_collapse = document.getElementsByClassName('navbar-collapse')[0]
-    navbar_holder = document.getElementsByClassName('navbar-collapse__holder')[0]
-    navbar_holder_scrollder = document.getElementsByClassName('navbar-collapse__scroller')[0]
+    navbar_collapse_overlay = document.getElementsByClassName(
+      "navbar-collapse__overlay"
+    )[0]
+    navbar_collapse = document.getElementsByClassName("navbar-collapse")[0]
+    navbar_holder = document.getElementsByClassName(
+      "navbar-collapse__holder"
+    )[0]
+    navbar_holder_scrollder = document.getElementsByClassName(
+      "navbar-collapse__scroller"
+    )[0]
 
-    if (counter == MAX_SCROLL || counter == MIN_SCROLL)
+    if (counter === MAX_SCROLL || counter === MIN_SCROLL)
       handleInterval(is_active)
   }
 
   function handleInterval(is_active) {
-    var st = setInterval(function(){
-      if (is_active){
+    var st = setInterval(function () {
+      if (is_active) {
         console.log(counter)
         counter -= 4
         let opacity = (MIN_SCROLL - counter) / 100
         handleAnimation(`translate(${counter}%, 0px)`, opacity)
-        navbar_holder.style.visibility = 'inherit'
-        if (counter <= MAX_SCROLL){
+        navbar_holder.style.visibility = "inherit"
+        if (counter <= MAX_SCROLL) {
           counter = MAX_SCROLL
-          clearInterval(st);
+          clearInterval(st)
           handleAnimation(`translate(${MAX_SCROLL}%, 0px)`, 1)
         }
-      }
-      else{
+      } else {
         counter += 4
         let opacity = counter / 100
         handleAnimation(`translate(${counter}%, 0px)`, opacity)
-        if (counter >= MIN_SCROLL){
+        if (counter >= MIN_SCROLL) {
           counter = MIN_SCROLL
-          clearInterval(st);
-          handleAnimation('', 0)
-          navbar_holder.style.visibility = 'hidden'
+          clearInterval(st)
+          handleAnimation("", 0)
+          navbar_holder.style.visibility = "hidden"
         }
       }
-    },10)
+    }, 10)
   }
 
   return (
@@ -71,47 +74,67 @@ const NavigationBar = () => {
               <ul className="navbar-nav">
                 <li className="nav-item">
                   <Link href="/about">
-                    <a 
-                      className={`nav-link nav_animation`} 
+                    <a
+                      className={`nav-link nav_animation`}
                       data-toggle="collapse"
-                      onClick={() => { handleActiveNav(!isActive) } }
-                    >Giới thiệu</a>
+                      onClick={() => {
+                        handleActiveNav(!isActive)
+                      }}
+                    >
+                      Giới thiệu
+                    </a>
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link href="/process">
-                    <a 
-                      className={`nav-link nav_animation`} 
+                    <a
+                      className={`nav-link nav_animation`}
                       data-toggle="collapse"
-                      onClick={() => { handleActiveNav(!isActive) } }
-                    >Quy trình</a>
+                      onClick={() => {
+                        handleActiveNav(!isActive)
+                      }}
+                    >
+                      Quy trình
+                    </a>
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link href="/products">
-                    <a 
-                      className={`nav-link nav_animation`} 
+                    <a
+                      className={`nav-link nav_animation`}
                       title="Overflow examples"
-                      onClick={() => { handleActiveNav(!isActive) } }
-                    >Sản phẩm</a>
+                      onClick={() => {
+                        handleActiveNav(!isActive)
+                      }}
+                    >
+                      Sản phẩm
+                    </a>
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link href="/examples/">
-                    <a 
-                      className={`nav-link nav_animation`} 
+                    <a
+                      className={`nav-link nav_animation`}
                       title="Overflow examples"
-                      onClick={() => { handleActiveNav(!isActive) } }
-                    >Khách hàng</a>
+                      onClick={() => {
+                        handleActiveNav(!isActive)
+                      }}
+                    >
+                      Khách hàng
+                    </a>
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link href="/examples/">
-                    <a 
-                      className={`nav-link nav_animation`} 
+                    <a
+                      className={`nav-link nav_animation`}
                       title="Overflow examples"
-                      onClick={() => { handleActiveNav(!isActive) } }
-                    >Liên hệ</a>
+                      onClick={() => {
+                        handleActiveNav(!isActive)
+                      }}
+                    >
+                      Liên hệ
+                    </a>
                   </Link>
                 </li>
               </ul>
@@ -119,16 +142,25 @@ const NavigationBar = () => {
           </div>
         </div>
       </div>
-      <button 
-        className={`navbar-toggler toggler--${isActive ? 'active' : 'innactive'}`} 
-        type="button" 
-        aria-controls="headerNav" 
-        aria-expanded="false" 
-        aria-label="Toggle navigation" 
-        onClick={() => { handleActiveNav(!isActive) } }
-        data-menu-opener="">
-          <span className="navbar-toggler__icon icon-burger"></span>
-          <span className="navbar-toggler__label" data-opened-state="Close" data-closed-state="Menu"></span>
+      <button
+        className={`navbar-toggler toggler--${
+          isActive ? "active" : "innactive"
+        }`}
+        type="button"
+        aria-controls="headerNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        onClick={() => {
+          handleActiveNav(!isActive)
+        }}
+        data-menu-opener=""
+      >
+        <span className="navbar-toggler__icon icon-burger"></span>
+        <span
+          className="navbar-toggler__label"
+          data-opened-state="Close"
+          data-closed-state="Menu"
+        ></span>
       </button>
     </div>
   )

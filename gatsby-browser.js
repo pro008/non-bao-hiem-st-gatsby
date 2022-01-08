@@ -10,6 +10,5 @@ import "./src/assets/css/style.css"
 // Font import
 import "./src/assets/fonts/font.css"
 
-
 // Highlighting for code blocks
 import "prismjs/themes/prism.css"

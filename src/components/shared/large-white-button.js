@@ -1,13 +1,9 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
+import React from "react"
+import { Button } from "react-bootstrap"
 import styled from "styled-components"
 
 const LargeWhiteButton = ({ children }) => {
-  return (
-    <WhiteButton>
-      { children }
-    </WhiteButton>
-  )
+  return <WhiteButton>{children}</WhiteButton>
 }
 
 const WhiteButton = styled(Button)`
@@ -17,7 +13,8 @@ const WhiteButton = styled(Button)`
   transition: 0.3s;
   padding: 0.9rem;
 
-  :hover, :focus{
+  :hover,
+  :focus {
     color: white;
     border-color: white;
     background: transparent;

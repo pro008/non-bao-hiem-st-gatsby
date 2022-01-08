@@ -1,7 +1,7 @@
 import React from "react"
-import Carousel from 'react-multi-carousel'
+import Carousel from "react-multi-carousel"
 import imageTheManh from "../../assets/images/backgroun_dv.png"
-import TheManhItem from './TheManhItem'
+import TheManhItem from "./TheManhItem"
 import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 
@@ -14,7 +14,12 @@ const query = graphql`
           description
         }
         image {
-          gatsbyImageData(width: 280, height: 200, layout: FIXED, placeholder: BLURRED)
+          gatsbyImageData(
+            width: 280
+            height: 200
+            layout: FIXED
+            placeholder: BLURRED
+          )
         }
       }
     }
@@ -24,20 +29,20 @@ const query = graphql`
 const responsive = {
   superLargeDesktop: {
     breakpoint: { max: 4000, min: 3000 },
-    items: 1
+    items: 1,
   },
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
-    items: 1
+    items: 1,
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
-    items: 1
+    items: 1,
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
-    items: 1
-  }
+    items: 1,
+  },
 }
 
 const TheManh = () => {
@@ -47,7 +52,9 @@ const TheManh = () => {
   return (
     <Wrapper>
       <h4 className="intro-section__title">
-        <center>Điểm mạnh cua <span className="text-red">ST HELMET</span></center>
+        <center>
+          Điểm mạnh cua <span className="text-red">ST HELMET</span>
+        </center>
       </h4>
       <Carousel
         responsive={responsive}
@@ -58,20 +65,24 @@ const TheManh = () => {
         containerClass="container-with-dots"
         itemClass="image-item"
         partialVisible={true}
-        deviceType={''}
+        deviceType={""}
       >
-        {
-          items.map((item, index) => {
-          const { title, description: { description }, image } = item
-          return <TheManhItem 
-              key={index} 
-              url={image} 
+        {items.map((item, index) => {
+          const {
+            title,
+            description: { description },
+            image,
+          } = item
+          return (
+            <TheManhItem
+              key={index}
+              url={image}
               alt={title}
               title={title}
               text={description}
             />
-          })
-        }
+          )
+        })}
       </Carousel>
     </Wrapper>
   )

@@ -11,7 +11,7 @@ const Logo = () => {
           src="../../assets/images/LOGO_SON_TUNG.png"
           width={76}
           height={61}
-          alt={'son tung logo'}
+          alt={"son tung logo"}
         />
       </Link>
     </Wrapper>
@@ -21,7 +21,7 @@ const Logo = () => {
 const Wrapper = styled.div`
   position: relative;
   z-index: 3;
-  margin-top : 0.7rem;
+  margin-top: 0.7rem;
   margin-left: 1rem;
   float: left;
   cursor: pointer;

@@ -1,13 +1,9 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
+import React from "react"
+import { Button } from "react-bootstrap"
 import styled from "styled-components"
 
 const LargeBlackButton = ({ children }) => {
-  return (
-    <BlackButton>
-      { children }
-    </BlackButton>
-  )
+  return <BlackButton>{children}</BlackButton>
 }
 
 const BlackButton = styled(Button)`
@@ -15,10 +11,11 @@ const BlackButton = styled(Button)`
   background-color: #080808;
   border-color: #080808;
 
-  :hover, :focus{
+  :hover,
+  :focus {
     color: white;
-  background-color: #080808;
-  border-color: #080808;
+    background-color: #080808;
+    border-color: #080808;
   }
 `
 

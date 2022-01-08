@@ -1,7 +1,6 @@
 import React from "react"
 import Layout from "../components/Layout"
-import { StaticImage } from "gatsby-plugin-image"
-import Slider from '../components/header/slider'
+import Slider from "../components/header/slider"
 import AllProducts from "../components/AllProducts"
 import ChuyenNganh from "../components/section/ChuyenNganh"
 import TheManh from "../components/section/TheManh"

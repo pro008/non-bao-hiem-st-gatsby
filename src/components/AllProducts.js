@@ -1,14 +1,14 @@
 import React from "react"
 import ProductsV2 from "./ProductsV2"
 import setupTags from "../utils/setupTags"
-import { Container } from 'react-bootstrap';
+import { Container } from "react-bootstrap"
 import { graphql, useStaticQuery } from "gatsby"
-import LargeRedButton from './shared/large-red-button'
+import LargeRedButton from "./shared/large-red-button"
 import styled from "styled-components"
 
 const query = graphql`
   {
-    allContentfulProducts(limit: 100, sort: {fields: position, order: ASC}) {
+    allContentfulProducts(limit: 100, sort: { fields: position, order: ASC }) {
       group(field: categoryId___categoryName, limit: 8) {
         fieldValue
         nodes {
@@ -18,7 +18,12 @@ const query = graphql`
             description
           }
           mainImage {
-            gatsbyImageData(width: 220, height: 220, layout: CONSTRAINED, placeholder: TRACED_SVG)
+            gatsbyImageData(
+              width: 220
+              height: 220
+              layout: CONSTRAINED
+              placeholder: TRACED_SVG
+            )
           }
           categoryId {
             categoryName
@@ -26,7 +31,7 @@ const query = graphql`
         }
       }
     }
-    allContentfulProductCategories(sort: {fields: position}) {
+    allContentfulProductCategories(sort: { fields: position }) {
       nodes {
         categoryName
         categoryHeader
@@ -41,21 +46,24 @@ const AllProducts = () => {
   const categories = data.allContentfulProductCategories.nodes
   let results = {}
 
-  categories.map(category =>{
+  categories.map(category => {
     const { categoryName, categoryHeader } = category
-    groupProducts.forEach(products =>{
+    groupProducts.forEach(products => {
       const { fieldValue, nodes } = products
-      if(fieldValue === categoryName)
-        results[categoryHeader] = nodes
+      if (fieldValue === categoryName) results[categoryHeader] = nodes
     })
   })
 
-  const clusterProduct = (key) => {
-    return(
+  const clusterProduct = key => {
+    return (
       <div key={key}>
-        <h3 className='intro-section__title mt-40'><center>{key}</center></h3>
+        <h3 className="intro-section__title mt-40">
+          <center>{key}</center>
+        </h3>
         <ProductsV2 produtcs={results[key]} />
-        <center><LargeRedButton>Xem them</LargeRedButton></center>
+        <center>
+          <LargeRedButton>Xem them</LargeRedButton>
+        </center>
       </div>
     )
   }
@@ -63,10 +71,10 @@ const AllProducts = () => {
   return (
     <Wrapper>
       <Container>
-        <div className='h_before_underline'>
-          <h4 className='h_underline'>Thiết kế theo thương hiệu</h4>
+        <div className="h_before_underline">
+          <h4 className="h_underline">Thiết kế theo thương hiệu</h4>
         </div>
-        { Object.keys(results).map(clusterProduct) }
+        {Object.keys(results).map(clusterProduct)}
       </Container>
     </Wrapper>
   )
@@ -76,15 +84,15 @@ const Wrapper = styled.section`
   background: white;
   overflow: hidden;
 
-  .h_before_underline{
+  .h_before_underline {
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  .h_underline{
+  .h_underline {
     font-size: 1.1rem;
-    color: #ED1C24;
+    color: #ed1c24;
     font-style: italic;
     letter-spacing: 3px;
     position: relative;
@@ -92,9 +100,9 @@ const Wrapper = styled.section`
     z-index: 1;
   }
 
-  .h_underline:after{
-    background: #ED1C24;
-    content: '';
+  .h_underline:after {
+    background: #ed1c24;
+    content: "";
     display: block;
     height: 2px;
     position: absolute;

@@ -10,7 +10,7 @@ module.exports = {
       summary: `Contact me through phong.vuong008@gmail.com`,
     },
     description: `Non bao hiem chat luong cao`,
-    siteUrl: `https://nonbaohiemst.com/`,
+    siteUrl: `https://nonbaohiemst.com`,
     social: {
       facebook: `ctysontung`,
     },

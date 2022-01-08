@@ -1,18 +1,17 @@
-import React from 'react';
+import React from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 const CustomDot = ({ smallImages, onClick, ...rest }) => {
   const {
-    onMove,
     index,
     active,
-    carouselState: { currentSlide, deviceType }
-  } = rest;
+  } = rest
 
   return (
     <>
       {
         <GatsbyImage
+          key={index}
           image={smallImages[index]}
           className="about-img"
           className={active ? "active" : "inactive"}
@@ -22,6 +21,5 @@ const CustomDot = ({ smallImages, onClick, ...rest }) => {
     </>
   )
 }
-
 
 export default CustomDot

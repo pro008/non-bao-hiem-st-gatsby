@@ -1,18 +1,16 @@
 import React from "react"
-import Logo from './logo'
-import NavigationBar from './navbar'
-import { Container } from 'react-bootstrap';
+import Logo from "./logo"
+import NavigationBar from "./navbar"
 
 const Header = () => {
   return (
     <div>
-      <div className='main_header' id="navbar">
-        <Logo/>
+      <div className="main_header" id="navbar">
+        <Logo />
         <NavigationBar />
       </div>
     </div>
   )
 }
-
 
 export default Header

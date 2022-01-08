@@ -1,15 +1,13 @@
 import React from "react"
 import ProductsV2 from "./ProductsV2"
-import setupTags from "../utils/setupTags"
-import { Container } from 'react-bootstrap';
+import { Container } from "react-bootstrap"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { graphql, useStaticQuery } from "gatsby"
-import LargeRedButton from './shared/large-red-button'
 import styled from "styled-components"
 
 const query = graphql`
   {
-    allContentfulProducts(sort: {fields: position, order: ASC}) {
+    allContentfulProducts(sort: { fields: position, order: ASC }) {
       group(field: categoryId___categoryName) {
         fieldValue
         nodes {
@@ -19,7 +17,12 @@ const query = graphql`
             description
           }
           mainImage {
-            gatsbyImageData(width: 330, height: 330, layout: CONSTRAINED, placeholder: TRACED_SVG)
+            gatsbyImageData(
+              width: 330
+              height: 330
+              layout: CONSTRAINED
+              placeholder: TRACED_SVG
+            )
           }
           categoryId {
             categoryName
@@ -27,7 +30,7 @@ const query = graphql`
         }
       }
     }
-    allContentfulProductCategories(sort: {fields: position}) {
+    allContentfulProductCategories(sort: { fields: position }) {
       nodes {
         categoryName
         categoryHeader
@@ -46,44 +49,46 @@ const AllProductsV2 = () => {
   const categories = data.allContentfulProductCategories.nodes
   let results = {}
 
-  categories.map(category =>{
-    const { categoryName, categoryHeader, description: {description} } = category
-    groupProducts.forEach(products =>{
+  categories.map(category => {
+    const {
+      categoryName,
+      categoryHeader,
+      description: { description },
+    } = category
+    groupProducts.forEach(products => {
       const { fieldValue, nodes } = products
-      if(fieldValue === categoryName)
-        results[categoryHeader] = {"data": nodes, "description": description}
+      if (fieldValue === categoryName)
+        results[categoryHeader] = { data: nodes, description: description }
     })
   })
 
-  const clusterProduct = (key) => {
-    const priorityData = results[key]['data'][0]
-    const description = results[key]['description']
+  const clusterProduct = key => {
+    const priorityData = results[key]["data"][0]
+    const description = results[key]["description"]
     const { mainImage } = priorityData
     const pathToImage = getImage(mainImage)
 
-    return(
+    return (
       <div>
         <div key={key} className="div-center">
           <GatsbyImage
             image={pathToImage}
-            alt={'non boa hiem'}
-            className='hide-mobile'
+            alt={"non boa hiem"}
+            className="hide-mobile"
           />
           <CardBlock>
-            <h3 className='intro-section__title'>{key}</h3>
+            <h3 className="intro-section__title">{key}</h3>
             <p>{description}</p>
           </CardBlock>
         </div>
-        <ProductsV2 produtcs={results[key]['data']} />
+        <ProductsV2 produtcs={results[key]["data"]} />
       </div>
     )
   }
 
   return (
     <Wrapper>
-      <Container>
-        { Object.keys(results).map(clusterProduct) }
-      </Container>
+      <Container>{Object.keys(results).map(clusterProduct)}</Container>
     </Wrapper>
   )
 }
@@ -96,12 +101,12 @@ const Wrapper = styled.section`
 const CardBlock = styled.div`
   text-align: left;
   margin-left: 60px;
-  position:relative;
-  z-index:1;
+  position: relative;
+  z-index: 1;
   padding: 40px 50px;
   max-width: 500px;
 
-  @media screen and (max-width:375px) {
+  @media screen and (max-width: 375px) {
     margin-left: 0px;
   }
 `

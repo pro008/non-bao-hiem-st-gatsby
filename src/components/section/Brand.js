@@ -1,16 +1,21 @@
 import React from "react"
-import { Container, Row, Col } from 'react-bootstrap';
+import { Row, Col } from "react-bootstrap"
 import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 
 const query = graphql`
   {
-    allContentfulBrands(limit: 12, sort: {order: ASC, fields: position}) {
+    allContentfulBrands(limit: 12, sort: { order: ASC, fields: position }) {
       nodes {
         title
         logo {
-          gatsbyImageData(width: 166, height: 100, layout: CONSTRAINED, placeholder: TRACED_SVG)
+          gatsbyImageData(
+            width: 166
+            height: 100
+            layout: CONSTRAINED
+            placeholder: TRACED_SVG
+          )
         }
       }
     }
@@ -25,12 +30,10 @@ const Brand = () => {
     const { title, logo } = nodes
     const pathImage = getImage(logo)
 
-    return(
+    return (
       <Col xs={6} md={2} key={index}>
         <div className="div-center">
-          <GatsbyImage
-            image={pathImage}
-            alt={title} />
+          <GatsbyImage image={pathImage} alt={title} />
         </div>
       </Col>
     )
@@ -39,11 +42,11 @@ const Brand = () => {
   return (
     <Wrapper>
       <div className="brand-logos-section__holder brand-logos-section--blue">
-        <h4 className="intro-section__title"><center>Khách hàng thân thiết</center></h4>
+        <h4 className="intro-section__title">
+          <center>Khách hàng thân thiết</center>
+        </h4>
         <div className="brand-logos-section__images">
-          <Row>
-            { brands.map(brandContainer) }
-          </Row>
+          <Row>{brands.map(brandContainer)}</Row>
         </div>
       </div>
     </Wrapper>
@@ -51,8 +54,8 @@ const Brand = () => {
 }
 
 const Wrapper = styled.section`
-  padding-right:20px;
-  padding-left:20px;
+  padding-right: 20px;
+  padding-left: 20px;
   padding-top: 50px;
   padding-bottom: 50px;
 `

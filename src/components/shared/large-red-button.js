@@ -1,23 +1,20 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
+import React from "react"
+import { Button } from "react-bootstrap"
 import styled from "styled-components"
 
 const LargeRedButton = ({ children }) => {
-  return (
-    <RedButton>
-      { children }
-    </RedButton>
-  )
+  return <RedButton>{children}</RedButton>
 }
 
 const RedButton = styled(Button)`
   color: white;
-  background-color: #ED1C24;
-  border-color: #ED1C24;
+  background-color: #ed1c24;
+  border-color: #ed1c24;
 
-  :hover, :focus{
-    color: #ED1C24;
-    border-color: #ED1C24;
+  :hover,
+  :focus {
+    color: #ed1c24;
+    border-color: #ed1c24;
     background: white;
   }
 `

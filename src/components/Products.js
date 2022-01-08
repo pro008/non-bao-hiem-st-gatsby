@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import slugifyUrl from "../utils/slugifyUrl"
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col } from "react-bootstrap"
 import styled from "styled-components"
 
 const Products = ({ produtcs = [] }) => {
@@ -16,10 +16,7 @@ const Products = ({ produtcs = [] }) => {
           <Col xs={6} md={3} key={id} className="center-content">
             <Link key={id} to={`/${slug}`}>
               <figure className="gallery-image">
-                <GatsbyImage
-                  image={pathToImage}
-                  alt={title}
-                />
+                <GatsbyImage image={pathToImage} alt={title} />
                 <figcaption>
                   <p>{title}</p>
                 </figcaption>
@@ -44,15 +41,15 @@ const Wrapper = styled(Row)`
   margin-top: 65px;
   margin-bottom: 25px;
 
-  a{
+  a {
     margin-right: 10px;
     margin-bottom: 14px;
   }
 
-  figcaption{
+  figcaption {
     opacity: 0;
     position: absolute;
-    top:0px;
+    top: 0px;
     width: 220px;
     height: 220px;
     display: flex;
@@ -61,20 +58,20 @@ const Wrapper = styled(Row)`
     text-align: center;
   }
 
-  figcaption:hover{
+  figcaption:hover {
     opacity: 1;
     -webkit-transition: opacity 0.5s ease-in;
-       -moz-transition: opacity 0.5s ease-in;
-         -o-transition: opacity 0.5s ease-in;
-    background:rgb(8,8,8, 0.5);
+    -moz-transition: opacity 0.5s ease-in;
+    -o-transition: opacity 0.5s ease-in;
+    background: rgb(8, 8, 8, 0.5);
     background-filter: blur(8px);
   }
 
-  figcaption p{
+  figcaption p {
     padding: 5px 12px;
     font-size: 2.2rem;
     font-weight: 800;
-    border-radius:10px;
+    border-radius: 10px;
     border: 2px solid white;
   }
 `

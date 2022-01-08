@@ -2,13 +2,12 @@ import React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import slugifyUrl from "../utils/slugifyUrl"
-import { Container, Row, Col } from 'react-bootstrap';
+import { Row, Col } from "react-bootstrap"
 import styled from "styled-components"
 
 const ProductsV2 = ({ produtcs = [] }) => {
-  if(produtcs == null)
-    return (<></>)
-      
+  if (produtcs == null) return <></>
+
   return (
     <Wrapper>
       {produtcs.map(product => {
@@ -19,12 +18,11 @@ const ProductsV2 = ({ produtcs = [] }) => {
           <Col xs={6} md={3} key={id} className="center-content">
             <Link key={id} to={`/${slug}`}>
               <figure className="gallery-image">
-                <GatsbyImage
-                  image={pathToImage}
-                  alt={title}
-                />
+                <GatsbyImage image={pathToImage} alt={title} />
                 <figcaption>
-                  <p><center>{title}</center></p>
+                  <p>
+                    <center>{title}</center>
+                  </p>
                 </figcaption>
               </figure>
             </Link>
@@ -47,22 +45,22 @@ const Wrapper = styled(Row)`
   flex-wrap: wrap;
   margin-top: 65px;
   margin-bottom: 25px;
-  padding-top:20px;
+  padding-top: 20px;
 
-  a{
+  a {
     margin-right: 10px;
     margin-bottom: 14px;
   }
 
-  figure{
-    padding-top:20px;
+  figure {
+    padding-top: 20px;
     padding-right: 10px;
     padding-left: 10px;
     padding-bottom: 0px;
     width: 200px;
-    background-color:white;
-    color:black;
-    border-bottom: 2px solid #ED1C24;
+    background-color: white;
+    color: black;
+    border-bottom: 2px solid #ed1c24;
     border-radius: 15px;
   }
 `

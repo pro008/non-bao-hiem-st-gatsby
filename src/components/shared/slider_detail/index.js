@@ -1,30 +1,30 @@
-import React from 'react';
-import Carousel from 'react-multi-carousel'
-import "react-multi-carousel/lib/styles.css";
+import React from "react"
+import Carousel from "react-multi-carousel"
+import "react-multi-carousel/lib/styles.css"
 import { GatsbyImage } from "gatsby-plugin-image"
 import styled from "styled-components"
-import CustomDot from './CustomDot'
-import CustomLeftArrow from './CustomLeftArrow'
-import CustomRightArrow from './CustomRightArrow'
+import CustomDot from "./CustomDot"
+import CustomLeftArrow from "./CustomLeftArrow"
+import CustomRightArrow from "./CustomRightArrow"
 
-const SliderDetail = ({images}) => {
+const SliderDetail = ({ images }) => {
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
-      items: 1
+      items: 1,
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 1
+      items: 1,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
-      items: 1
+      items: 1,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
-      items: 1
-    }
+      items: 1,
+    },
   }
 
   return (
@@ -37,62 +37,61 @@ const SliderDetail = ({images}) => {
         infinite={true}
         containerClass="custom-caroucel"
         itemClass="image-item"
-        deviceType={''}
+        deviceType={""}
         dotListClass="custom-dot"
         partialVisible={true}
         renderDotsOutside={true}
         customRightArrow={<CustomRightArrow />}
         customLeftArrow={<CustomLeftArrow />}
-        customDot={<CustomDot smallImages={images}/>}
+        customDot={<CustomDot smallImages={images} />}
       >
-        {
-          images.map((path, index) => {
-          return <GatsbyImage
-                  image={path}
-                  width={550} 
-                  height={550}
-                  className="about-img"
-                />
-          })
-        }
+        {images.map((path, index) => {
+          return (
+            <GatsbyImage
+              image={path}
+              width={550}
+              height={550}
+              className="about-img"
+            />
+          )
+        })}
       </Carousel>
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
-  padding-left:76px;
+  padding-left: 76px;
 
-  .custom-caroucel{
-    text-align:center;
+  .custom-caroucel {
+    text-align: center;
     border: 6px solid white;
-    border-radius:8px;
+    border-radius: 8px;
   }
 
   .custom-dot {
-    height:100%;
-    max-width:50px;
-    display:block;
-    float:left;
+    height: 100%;
+    max-width: 50px;
+    display: block;
+    float: left;
   }
 
-  .custom-dot div{
+  .custom-dot div {
     width: 100%;
-    margin-top:7px;
-    margin-bottom:7px;
+    margin-top: 7px;
+    margin-bottom: 7px;
   }
 
-  .custom-dot .active{
+  .custom-dot .active {
     transform: scale(1.2);
-    transition: transform 1.2s; 
-
+    transition: transform 1.2s;
   }
 
-  .wrapper-caroucel{
-    display:flex;
+  .wrapper-caroucel {
+    display: flex;
   }
 
-  @media screen and (max-width:375px) {
+  @media screen and (max-width: 375px) {
     padding-left: 0px;
     .custom-dot {
       display: flex;
@@ -100,9 +99,9 @@ const Wrapper = styled.div`
       position: inherit;
     }
 
-    .custom-dot div{
-      margin-left:4px;
-      margin-right:4px;
+    .custom-dot div {
+      margin-left: 4px;
+      margin-right: 4px;
     }
   }
 `

@@ -1,15 +1,23 @@
 import React from "react"
-import { Container, Row, Col, InputGroup, FormControl, Button } from 'react-bootstrap';
+import {
+  Container,
+  Row,
+  Col,
+  InputGroup,
+  FormControl
+} from "react-bootstrap"
 import styled from "styled-components"
-import LargeBlackButton from '../shared/large-black-button'
+import LargeBlackButton from "../shared/large-black-button"
 
 const EmailInput = ({ containerSize }) => {
   return (
-    <Wrapper> 
+    <Wrapper>
       <Container>
         <Row>
           <Col xs={12} md={6}>
-            <p className={`text-white div-center`}><strong>TINH TẾ BỞI ĐƯỜNG NÉT - ĐẲNG CẤP VỀ CHẤT LƯỢNG</strong></p>
+            <p className={`text-white div-center`}>
+              <strong>TINH TẾ BỞI ĐƯỜNG NÉT - ĐẲNG CẤP VỀ CHẤT LƯỢNG</strong>
+            </p>
           </Col>
 
           <Col xs={12} md={5}>
@@ -19,9 +27,7 @@ const EmailInput = ({ containerSize }) => {
                 aria-label="NHẬP ĐỊA CHỈ EMAIL"
                 aria-describedby="basic-addon2"
               />
-              <LargeBlackButton id="button-addon2">
-                Submit
-              </LargeBlackButton>
+              <LargeBlackButton id="button-addon2">Submit</LargeBlackButton>
             </InputGroup>
           </Col>
         </Row>
@@ -31,7 +37,7 @@ const EmailInput = ({ containerSize }) => {
 }
 
 const Wrapper = styled.div`
-  background-color: #ED1C24;
+  background-color: #ed1c24;
   padding-top: 8px;
   padding-bottom: 8px;
 
@@ -39,7 +45,7 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
 
-  h4{
+  h4 {
     font-size: 24px;
     color: white;
     margin: 0px;
@@ -49,12 +55,11 @@ const Wrapper = styled.div`
     align-items: center;
   }
 
-  input{
+  input {
     height: auto;
   }
 
-
-  @media screen and (max-width:375px) {
+  @media screen and (max-width: 375px) {
     font-size: 12px;
     margin: 0px;
   }

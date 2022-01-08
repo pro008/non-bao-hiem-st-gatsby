@@ -1,30 +1,30 @@
 import React from "react"
 import Layout from "../components/Layout"
-import { StaticImage, getImage } from "gatsby-plugin-image"
+import { StaticImage } from "gatsby-plugin-image"
 import { graphql, useStaticQuery } from "gatsby"
-import { Container } from 'react-bootstrap';
+import { Container } from "react-bootstrap"
 import SEO from "../components/SEO"
 import CardBlock from "../components/shared/CardBlock"
 
 const Process = () => {
   const data = useStaticQuery(query)
   const items = data.allContentfulQuyTrinh.nodes
-  const headerText= "GIỚI THIỆU VỀ CÔNG TY SƠN TÙNG"
+  const headerText = "GIỚI THIỆU VỀ CÔNG TY SƠN TÙNG"
 
   return (
     <Layout>
       <SEO title="Process" />
       <main className="page">
         <header>
-          <div className='headBodyWrapper'>
+          <div className="headBodyWrapper">
             <StaticImage
-              className='headerSliderImage'
-              src='../assets/images/quy_trinh.png'
+              className="headerSliderImage"
+              src="../assets/images/quy_trinh.png"
               alt={headerText}
               placeholder="blurred"
               layout="CONSTRAINED"
             />
-            <div className='headerTextContent'>
+            <div className="headerTextContent">
               <h5 className="text-white">{headerText}</h5>
             </div>
           </div>
@@ -39,7 +39,7 @@ const Process = () => {
 
 export const query = graphql`
   {
-    allContentfulQuyTrinh(sort: {fields: position}) {
+    allContentfulQuyTrinh(sort: { fields: position }) {
       nodes {
         title
         description {
