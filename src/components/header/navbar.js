@@ -73,7 +73,7 @@ const NavigationBar = () => {
             <div className="navbar-collapse__menu" role="navigation">
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <Link href="/about">
+                  <Link to="/about">
                     <a
                       className={`nav-link nav_animation`}
                       data-toggle="collapse"
@@ -81,12 +81,12 @@ const NavigationBar = () => {
                         handleActiveNav(!isActive)
                       }}
                     >
-                      Giới thiệu
+                      GIỚI THIỆU
                     </a>
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link href="/process">
+                  <Link to="/process">
                     <a
                       className={`nav-link nav_animation`}
                       data-toggle="collapse"
@@ -94,12 +94,12 @@ const NavigationBar = () => {
                         handleActiveNav(!isActive)
                       }}
                     >
-                      Quy trình
+                      QUY TRÌNH
                     </a>
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link href="/products">
+                  <Link to="/products">
                     <a
                       className={`nav-link nav_animation`}
                       title="Overflow examples"
@@ -107,12 +107,12 @@ const NavigationBar = () => {
                         handleActiveNav(!isActive)
                       }}
                     >
-                      Sản phẩm
+                      SẢN PHẨM
                     </a>
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link href="/examples/">
+                  <Link to="/clients/">
                     <a
                       className={`nav-link nav_animation`}
                       title="Overflow examples"
@@ -120,12 +120,12 @@ const NavigationBar = () => {
                         handleActiveNav(!isActive)
                       }}
                     >
-                      Khách hàng
+                      KHÁCH HÀNG
                     </a>
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link href="/examples/">
+                  <Link to="/contact/">
                     <a
                       className={`nav-link nav_animation`}
                       title="Overflow examples"
@@ -133,7 +133,7 @@ const NavigationBar = () => {
                         handleActiveNav(!isActive)
                       }}
                     >
-                      Liên hệ
+                      LIÊN HÊ
                     </a>
                   </Link>
                 </li>

@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-const TheManhItem = ({ url, alt, title, text }) => {
+const Item = ({ url, alt, title, text }) => {
   const pathImage = getImage(url)
 
   return (
@@ -23,7 +23,7 @@ const TheManhItem = ({ url, alt, title, text }) => {
 const Wrapper = styled.aside`
   display: table;
   margin: auto;
-  padding: 2.7rem calc(4% + 0px);
+  padding: 4rem calc(4% + 0px);
   max-width: 85%;
   margin-top: 3px;
   margin-bottom: 3px;
@@ -106,4 +106,4 @@ const Wrapper = styled.aside`
   }
 `
 
-export default TheManhItem
+export default Item

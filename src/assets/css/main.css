@@ -11855,6 +11855,24 @@ a.text-cyan_lighter_20:hover {
   line-height: 1.6
 }
 
+.text-image-block__hidden_span_left, .text-image-block__hidden_span_right{
+  position:absolute;
+  opacity: 0.2;
+  color: darkgray;
+  font-size: 108px;
+  top: -23px;
+  font-weight: 600;
+  font-family: Verdana, sans-serif;
+}
+
+.text-image-block__hidden_span_left{
+  right: 8px;
+}
+
+.text-image-block__hidden_span_right{
+  left: 8px;
+}
+
 .text-image-block__label {
   letter-spacing: .08em
 }

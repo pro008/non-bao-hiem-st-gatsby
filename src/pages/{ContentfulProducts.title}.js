@@ -34,10 +34,12 @@ const ProductTemplate = ({ data }) => {
       <SEO title={title} description={description} />
       <main className="page">
         <header>
-          <div className="headBodyWrapper">
+          <div className="headBodyWrapperSub">
             <StaticImage
-              className="headerSliderImage"
+              className="headerSliderImageSub"
               src="../assets/images/gioi_thieu.png"
+              width={1028}
+              height={600}
               alt={title}
               placeholder="blurred"
               layout="CONSTRAINED"
@@ -125,7 +127,7 @@ export const query = graphql`
       contentImages {
         gatsbyImageData(
           width: 550
-          height: 550
+          height: 704
           layout: CONSTRAINED
           placeholder: TRACED_SVG
         )

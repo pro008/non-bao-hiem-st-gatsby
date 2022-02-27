@@ -11,17 +11,18 @@ const ProductsV2 = ({ produtcs = [] }) => {
   return (
     <Wrapper>
       {produtcs.map(product => {
-        const { id, title, mainImage } = product
+        const { id, title, productTitle, mainImage } = product
         const pathToImage = getImage(mainImage)
         const slug = slugifyUrl(title)
+        let final_tile = productTitle || title
         return (
           <Col xs={6} md={3} key={id} className="center-content">
             <Link key={id} to={`/${slug}`}>
-              <figure className="gallery-image">
+              <figure>
                 <GatsbyImage image={pathToImage} alt={title} />
                 <figcaption>
                   <p>
-                    <center>{title}</center>
+                    <center>{final_tile}</center>
                   </p>
                 </figcaption>
               </figure>
@@ -62,6 +63,12 @@ const Wrapper = styled(Row)`
     color: black;
     border-bottom: 2px solid #ed1c24;
     border-radius: 15px;
+    box-shadow: -2px -2px 15px 0 rgb(218 218 218);
+  }
+
+  figure:hover {
+    transform: scale(1.1);
+    transition: transform 0.4s;
   }
 `
 

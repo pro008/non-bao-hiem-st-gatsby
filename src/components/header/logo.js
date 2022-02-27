@@ -6,7 +6,7 @@ import { StaticImage } from "gatsby-plugin-image"
 const Logo = () => {
   return (
     <Wrapper>
-      <Link href="/">
+      <Link to="/">
         <StaticImage
           src="../../assets/images/LOGO_SON_TUNG.png"
           width={76}

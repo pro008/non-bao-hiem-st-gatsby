@@ -4,12 +4,11 @@ import { StaticImage } from "gatsby-plugin-image"
 import { graphql, useStaticQuery } from "gatsby"
 import { Container } from "react-bootstrap"
 import SEO from "../components/SEO"
-import CardBlock from "../components/shared/CardBlock"
 
-const About = () => {
+const Client = () => {
   const data = useStaticQuery(query)
   const items = data.allContentfulGioiThieu.nodes
-  const headerText = "GIỚI THIỆU VỀ CÔNG TY SƠN TÙNG"
+  const headerText = "KHÁCH HÀNG CỦA CÔNG TY SƠN TÙNG"
 
   return (
     <Layout>
@@ -32,7 +31,7 @@ const About = () => {
           </div>
         </header>
         <Container>
-          <CardBlock cards={items} />
+          <h1><center>Under maintenance</center></h1>
         </Container>
       </main>
     </Layout>
@@ -48,14 +47,11 @@ export const query = graphql`
           description
         }
         image {
-          gatsbyImageData(
-            layout: CONSTRAINED, 
-            placeholder: BLURRED
-          )
+          gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
     }
   }
 `
 
-export default About
+export default Client

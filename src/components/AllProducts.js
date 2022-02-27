@@ -1,6 +1,6 @@
 import React from "react"
 import ProductsV2 from "./ProductsV2"
-import setupTags from "../utils/setupTags"
+import { Link } from "gatsby"
 import { Container } from "react-bootstrap"
 import { graphql, useStaticQuery } from "gatsby"
 import LargeRedButton from "./shared/large-red-button"
@@ -14,6 +14,7 @@ const query = graphql`
         nodes {
           id
           title
+          productTitle
           description {
             description
           }
@@ -62,14 +63,16 @@ const AllProducts = () => {
         </h3>
         <ProductsV2 produtcs={results[key]} />
         <center>
-          <LargeRedButton>Xem them</LargeRedButton>
+        <Link to="/products">
+          <LargeRedButton>Xem thêm</LargeRedButton>
+        </Link>
         </center>
       </div>
     )
   }
 
   return (
-    <Wrapper>
+    <Wrapper className="bg-light-grey">
       <Container>
         <div className="h_before_underline">
           <h4 className="h_underline">Thiết kế theo thương hiệu</h4>

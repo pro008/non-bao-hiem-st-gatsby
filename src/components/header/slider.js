@@ -4,6 +4,7 @@ import SliderItem from "./slider_item"
 import "react-multi-carousel/lib/styles.css"
 import { graphql, useStaticQuery } from "gatsby"
 import { getImage } from "gatsby-plugin-image"
+import CustomDot from "./CustomDot"
 
 const Slider = () => {
   const data = useStaticQuery(query)
@@ -40,6 +41,7 @@ const Slider = () => {
       showDots={true}
       removeArrowOnDeviceType={["tablet", "mobile"]}
       deviceType={""}
+      customDot={<CustomDot />}
     >
       {sliders.map((item, index) => {
         const { image, title, description } = item

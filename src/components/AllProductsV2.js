@@ -13,6 +13,7 @@ const query = graphql`
         nodes {
           id
           title
+          productTitle
           description {
             description
           }

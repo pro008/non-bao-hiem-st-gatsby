@@ -33,7 +33,9 @@ const CardBlock = ({ cards = [] }) => {
                       <div className="text_image_block__description">
                         <div className="text-image-block__text-box">
                           <h3 className="text-image-block__subtitle is-inview">
-                            Lịch sử thành lập
+                            <span className={`text-image-block__hidden_span_${align}`}>
+                              0{index + 1}
+                            </span>{title}
                           </h3>
                           <ul className="text-image-block__text is-inview">
                             {textSplit(description).map((e, i) => {

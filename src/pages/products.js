@@ -17,10 +17,12 @@ const Products = () => {
       <SEO title="Products" />
       <main className="page">
         <header>
-          <div className="headBodyWrapper">
+          <div className="headBodyWrapperSub">
             <StaticImage
-              className="headerSliderImage"
+              className="headerSliderImageSub"
               src="../assets/images/gioi_thieu.png"
+              width={1028}
+              height={600}
               alt={headerText}
               placeholder="blurred"
               layout="CONSTRAINED"

@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import { Container, Row, Col } from "react-bootstrap"
 import LargeRedTransparentButton from "../shared/large-red-transparent-button"
 import styled from "styled-components"
@@ -16,9 +17,11 @@ const ChuyenNganh = () => {
               Sản xuất mũ bảo hiểm quảng cáo theo thương hiệu uy tín hàng đầu
               Việt Nam
             </p>
-            <LargeRedTransparentButton>
-              GIỚI THIỆU VỀ CÔNG TY SƠN TÙNG
-            </LargeRedTransparentButton>
+            <Link to="/about">
+              <LargeRedTransparentButton>
+                GIỚI THIỆU VỀ CÔNG TY SƠN TÙNG
+              </LargeRedTransparentButton>
+            </Link>
           </Container>
         </Col>
         <Col md={7} xs={12}>

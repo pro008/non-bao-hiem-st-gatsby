@@ -2,6 +2,7 @@ import React from "react"
 import Carousel from "react-multi-carousel"
 import "react-multi-carousel/lib/styles.css"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import styled from "styled-components"
 
 const NormalSlider = ({ images, needParse }) => {
   if (images == null) return <></>
@@ -26,7 +27,7 @@ const NormalSlider = ({ images, needParse }) => {
   }
 
   return (
-    <>
+    <Wrapper>
       <Carousel
         responsive={responsive}
         ssr
@@ -51,8 +52,14 @@ const NormalSlider = ({ images, needParse }) => {
           )
         })}
       </Carousel>
-    </>
+    </Wrapper>
   )
 }
+
+const Wrapper = styled.div`
+  .custom-caroucel {
+    text-align: center;
+  }
+`
 
 export default NormalSlider
