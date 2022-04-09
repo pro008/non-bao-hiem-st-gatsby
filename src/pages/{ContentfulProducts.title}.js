@@ -29,9 +29,11 @@ const ProductTemplate = ({ data }) => {
     })
   }
 
+  const slug = `Nón bảo hiểm sơn tùng mã số ${title}`;
+
   return (
     <Layout>
-      <SEO title={title} description={description} />
+      <SEO title={title} description={slug} />
       <main className="page">
         <header>
           <div className="headBodyWrapperSub">

@@ -2,8 +2,8 @@ import React from "react"
 import { Button } from "react-bootstrap"
 import styled from "styled-components"
 
-const LargeRedButton = ({ children }) => {
-  return <RedButton>{children}</RedButton>
+const LargeRedButton = ({ type, children }) => {
+  return <RedButton type={type}>{children}</RedButton>
 }
 
 const RedButton = styled(Button)`

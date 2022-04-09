@@ -13,7 +13,7 @@ const About = () => {
 
   return (
     <Layout>
-      <SEO title="About" />
+      <SEO title="Giới Thiệu" description={headerText}/>
       <main className="page">
         <header>
           <div className="headBodyWrapperSub">
@@ -48,10 +48,7 @@ export const query = graphql`
           description
         }
         image {
-          gatsbyImageData(
-            layout: CONSTRAINED, 
-            placeholder: BLURRED
-          )
+          gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
     }

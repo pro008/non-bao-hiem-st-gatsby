@@ -1,12 +1,10 @@
 import React from "react"
 
 const CustomDot = ({ onClick, ...rest }) => {
-  const {
-    active,
-  } = rest;
+  const { active } = rest
 
   return (
-    <button
+    <span
       className={`home-custom-dot-${active ? "active" : "inactive"}`}
       onClick={() => onClick()}
     />

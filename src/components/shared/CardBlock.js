@@ -33,9 +33,12 @@ const CardBlock = ({ cards = [] }) => {
                       <div className="text_image_block__description">
                         <div className="text-image-block__text-box">
                           <h3 className="text-image-block__subtitle is-inview">
-                            <span className={`text-image-block__hidden_span_${align}`}>
+                            <span
+                              className={`text-image-block__hidden_span_${align}`}
+                            >
                               0{index + 1}
-                            </span>{title}
+                            </span>
+                            {title}
                           </h3>
                           <ul className="text-image-block__text is-inview">
                             {textSplit(description).map((e, i) => {
@@ -48,7 +51,7 @@ const CardBlock = ({ cards = [] }) => {
                     <Col
                       xs={12}
                       md={6}
-                      className="text-image-block__visual-part"
+                      className="text-image-block__visual-part overflow-x-hidden"
                     >
                       <div className="text-image-block__image-holder">
                         <GatsbyImage

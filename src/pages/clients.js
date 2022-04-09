@@ -12,7 +12,7 @@ const Client = () => {
 
   return (
     <Layout>
-      <SEO title="About" />
+      <SEO title="Khách Hàng" />
       <main className="page">
         <header>
           <div className="headBodyWrapperSub">
@@ -31,7 +31,9 @@ const Client = () => {
           </div>
         </header>
         <Container>
-          <h1><center>Under maintenance</center></h1>
+          <h1>
+            <center>Under maintenance</center>
+          </h1>
         </Container>
       </main>
     </Layout>

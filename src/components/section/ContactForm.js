@@ -1,49 +1,63 @@
 import React from "react"
-import Form from 'react-bootstrap/Form';
 import styled from "styled-components"
 import LargeRedButton from "../shared/large-red-button"
 
-const ContactForm = ({ children }) => {
+const ContactForm = () => {
   return (
     <Section>
-      <Form.Group className="mb-3">
-        <Form.Label>Email</Form.Label>
-        <Form.Control placeholder="hiện đang được bảo trì" disabled />
-      </Form.Group>
-      <Form.Group className="mb-3">
-        <Form.Label>HỌ VÀ TÊN</Form.Label>
-        <Form.Control placeholder="hiện đang được bảo trì" disabled />
-      </Form.Group>
-      <Form.Group className="mb-3">
-        <Form.Label>SỐ ĐIỆN THOẠI</Form.Label>
-        <Form.Control placeholder="hiện đang được bảo trì" disabled />
-      </Form.Group>
-      <Form.Group className="mb-3">
-        <Form.Label>MÃ SẢN PHẨM</Form.Label>
-        <Form.Control placeholder="hiện đang được bảo trì" disabled />
-      </Form.Group>
-      <Form.Group className="mb-3">
-        <Form.Label>SỐ LƯỢNG</Form.Label>
-        <Form.Control placeholder="hiện đang được bảo trì" disabled />
-      </Form.Group>
-      <Form.Group className="mb-3">
-        <Form.Label>LỜI NHẮN</Form.Label>
-        <Form.Control placeholder="hiện đang được bảo trì" disabled />
-      </Form.Group>
-      <center><LargeRedButton type="submit">Submit</LargeRedButton></center>
+      <form method="post" action="https://usebasin.com/f/a04787477e1a">
+        <div className="mb-3">
+          <label className="form-label">Email</label>
+          <input className="form-control" type="email" name="email" />
+        </div>
+        <div className="mb-3">
+          <label className="form-label">HỌ VÀ TÊN</label>
+          <input className="form-control" type="text" name="name" />
+        </div>
+        <div className="mb-3">
+          <label className="form-label">SỐ ĐIỆN THOẠI</label>
+          <input className="form-control" type="text" name="phone-number" />
+        </div>
+        <div className="mb-3">
+          <label className="form-label">MÃ SẢN PHẨM</label>
+          <input className="form-control" type="text" name="phone-number" />
+        </div>
+        <div className="mb-3">
+          <label className="form-label">SỐ LƯỢNG</label>
+          <input className="form-control" type="text" name="phone-number" />
+        </div>
+        <div className="mb-3">
+          <label className="form-label">LỜI NHẮN</label>
+          <input className="form-control" type="text" name="phone-number" />
+        </div>
+        <center>
+          <LargeRedButton type="submit">Submit</LargeRedButton>
+        </center>
+      </form>
     </Section>
   )
 }
 
 const Section = styled.section`
-  .form-control{
-    border-top:0px;
-    border-left:0px;
-    border-right:0px;
-    border-radius:4px;
+  form{
+    width:600px;
+    margin-left:auto;
+    margin-right:auto;
   }
-  .form-control:disabled{
-    background-color:white;
+  .form-control {
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-radius: 4px;
+  }
+  .form-control:disabled {
+    background-color: white;
+  }
+
+  @media (max-width:600px){
+    form{
+      width:300px;
+    }
   }
 `
 

@@ -9,11 +9,12 @@ import CardBlock from "../components/shared/CardBlock"
 const Process = () => {
   const data = useStaticQuery(query)
   const items = data.allContentfulQuyTrinh.nodes
-  const headerText = "GIỚI THIỆU VỀ CÔNG TY SƠN TÙNG"
+  const headerText = "QUY TRÌNH SẢN XUẤT CÔNG TY SƠN TÙNG"
+
 
   return (
     <Layout>
-      <SEO title="Process" />
+      <SEO title="Quy Trình" description={headerText}/>
       <main className="page">
         <header>
           <div className="headBodyWrapperSub">

@@ -70,6 +70,18 @@ const Wrapper = styled(Row)`
     transform: scale(1.1);
     transition: transform 0.4s;
   }
+
+  @media screen and (max-width: 400px) {
+    figure{
+      width:100px
+    }
+  }
+
+  @media screen and (max-width: 960px) {
+    figure{
+      width:150px
+    }
+  }
 `
 
 export default ProductsV2

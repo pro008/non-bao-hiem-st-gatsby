@@ -60,7 +60,7 @@ const TheManh = () => {
   const items = data.allContentfulDiemManh.nodes
   const tabData = items.map(item => {
     const { icon, iconTitle } = item
-    return ({ smallImages: icon, title: iconTitle })
+    return { smallImages: icon, title: iconTitle }
   })
 
   return (
@@ -113,47 +113,47 @@ const Wrapper = styled.section`
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-  .reverse-order{
+  .reverse-order {
     display: flex;
     margin-top: 42px;
     flex-direction: column-reverse;
   }
 
-  .custom-dot-list-style{
-    position:relative;
+  .custom-dot-list-style {
+    position: relative;
     margin-bottom: 62px;
   }
 
-  .custom-dot-list-style > div{
-    padding:22px 80px;
+  .custom-dot-list-style > div {
+    padding: 22px 80px;
   }
 
-  .custom-dot-list-style > div:not(:last-child){
-    border-right:1px solid #d7d7d7;
+  .custom-dot-list-style > div:not(:last-child) {
+    border-right: 1px solid #d7d7d7;
   }
 
-  .custom-dot-list-style p{
+  .custom-dot-list-style p {
     margin: 0px;
-    margin-top:15px;
+    margin-top: 15px;
     text-transform: uppercase;
   }
-  
-  .custom-dot-list-style .inactive{
+
+  .custom-dot-list-style .inactive {
     opacity: 0.2;
   }
 
   @media screen and (max-width: 960px) {
-    .custom-dot-list-style > div{
-      padding:12px 40px;
+    .custom-dot-list-style > div {
+      padding: 12px 40px;
     }
   }
 
   @media screen and (max-width: 391px) {
-    .custom-dot-list-style > div{
-      padding:10px 20px;
+    .custom-dot-list-style > div {
+      padding: 10px 20px;
     }
 
-    .custom-dot-list-style > div > div{
+    .custom-dot-list-style > div > div {
       width: 42px !important;
       height: 42px !important;
     }

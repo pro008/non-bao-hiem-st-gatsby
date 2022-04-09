@@ -63,9 +63,9 @@ const AllProducts = () => {
         </h3>
         <ProductsV2 produtcs={results[key]} />
         <center>
-        <Link to="/products">
-          <LargeRedButton>Xem thêm</LargeRedButton>
-        </Link>
+          <Link to="/products">
+            <LargeRedButton>Xem thêm</LargeRedButton>
+          </Link>
         </center>
       </div>
     )

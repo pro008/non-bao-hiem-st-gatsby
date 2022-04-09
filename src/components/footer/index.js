@@ -1,12 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import {
-  Container,
-  Row,
-  Col,
-  InputGroup,
-  FormControl
-} from "react-bootstrap"
+import { Container, Row, Col, InputGroup, FormControl } from "react-bootstrap"
 import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
 import LargeBlackButton from "../shared/large-black-button"
@@ -18,7 +12,7 @@ const Footer = () => {
         <Container className="footer_infor">
           <Row>
             <Col xs={12} md={4}>
-              <a to="tel:0903819987">
+              <a to="tel:0937115578">
                 <StaticImage
                   src="../../assets/images/icons/phone_number.png"
                   width={50}
@@ -26,7 +20,7 @@ const Footer = () => {
                   alt={"son tung logo"}
                   className={"mb-20"}
                 />
-                <p>091.235.4783 (MR. Vũ)</p>
+                <p>0937.11.55.78 (Ms. My)</p>
               </a>
             </Col>
 
@@ -51,9 +45,7 @@ const Footer = () => {
                 alt={"Location son tung helmade"}
                 className={"mb-20"}
               />
-              <p>
-                304/38 Hương Lộ 80, P. Bình Hưng Hòa B, Q. Bình Tân, TP.HCM
-              </p>
+              <p>304/38 Hương Lộ 80, P. Bình Hưng Hòa B, Q. Bình Tân, TP.HCM</p>
             </Col>
           </Row>
           <hr />
@@ -157,8 +149,8 @@ const Wrapper = styled.div`
   color: black;
   background-color: #f4f4f4;
   text-align: center;
-  padding-top:20px;
-  padding-bottom:25px;
+  padding-top: 20px;
+  padding-bottom: 25px;
 
   a,
   p,

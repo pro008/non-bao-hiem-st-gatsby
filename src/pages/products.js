@@ -14,7 +14,7 @@ const Products = () => {
 
   return (
     <Layout>
-      <SEO title="Products" />
+      <SEO title="Products" description={headerText}/>
       <main className="page">
         <header>
           <div className="headBodyWrapperSub">

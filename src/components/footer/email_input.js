@@ -1,11 +1,5 @@
 import React from "react"
-import {
-  Container,
-  Row,
-  Col,
-  InputGroup,
-  FormControl
-} from "react-bootstrap"
+import { Container, Row, Col, InputGroup, FormControl } from "react-bootstrap"
 import styled from "styled-components"
 import LargeBlackButton from "../shared/large-black-button"
 

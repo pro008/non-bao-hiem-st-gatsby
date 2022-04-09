@@ -3,6 +3,10 @@
   float: right;
 }
 
+.overflow-x-hidden{
+  overflow-x: hidden;
+}
+
 .mt-20{
   margin-top: 20px;
 }
@@ -116,10 +120,18 @@
   background-color:darkgray;
 }
 
-@media screen and (max-width:375px) {
+@media screen and (max-width:450px) {
+  .headBodyWrapperSub{
+    height:260px;
+  }
+
+  .headBodyWrapperSub .headerTextContent h5{
+    font-size:16px;
+  }
+
   .headBodyWrapper{
     width: 100vw;
-    height: 600px;
+    height: 260px;
   }
 
   .headBodyWrapper h5{
@@ -129,7 +141,7 @@
 
   .headerImageWrapper{
     width: 100vw;
-    height: 600px;
+    height: 260px;
   }
 
   .headerImageWrapper h5{
