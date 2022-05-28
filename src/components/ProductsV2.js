@@ -72,14 +72,14 @@ const Wrapper = styled(Row)`
   }
 
   @media screen and (max-width: 400px) {
-    figure{
-      width:100px
+    figure {
+      width: 100px;
     }
   }
 
   @media screen and (max-width: 960px) {
-    figure{
-      width:150px
+    figure {
+      width: 150px;
     }
   }
 `

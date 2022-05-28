@@ -39,10 +39,10 @@ const ContactForm = () => {
 }
 
 const Section = styled.section`
-  form{
-    width:600px;
-    margin-left:auto;
-    margin-right:auto;
+  form {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .form-control {
     border-top: 0px;
@@ -54,9 +54,9 @@ const Section = styled.section`
     background-color: white;
   }
 
-  @media (max-width:600px){
-    form{
-      width:300px;
+  @media (max-width: 600px) {
+    form {
+      width: 300px;
     }
   }
 `

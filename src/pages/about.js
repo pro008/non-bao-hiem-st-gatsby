@@ -13,7 +13,7 @@ const About = () => {
 
   return (
     <Layout>
-      <SEO title="Giới Thiệu" description={headerText}/>
+      <SEO title="Giới Thiệu" description={headerText} />
       <main className="page">
         <header>
           <div className="headBodyWrapperSub">

@@ -6,13 +6,12 @@ import SEO from "../components/SEO"
 import ContactForm from "../components/section/ContactForm"
 import styled from "styled-components"
 
-
 const Contact = () => {
   const headerText = "LIÊN HỆ VỚI CHÚNG TÔI"
 
   return (
     <Layout>
-      <SEO title="Liên Hệ" description={headerText}/>
+      <SEO title="Liên Hệ" description={headerText} />
       <main className="page">
         <header>
           <div className="headBodyWrapperSub">
@@ -48,22 +47,21 @@ const Contact = () => {
   )
 }
 
-
 const FieldSet = styled.fieldset`
-  width:100%;
-  height:100%;
+  width: 100%;
+  height: 100%;
 
   iframe {
-    width:800px;
-    height:450px;
+    width: 800px;
+    height: 450px;
   }
 
-  @media (max-width:800px){
-    width:100%;
-    height:100%;
+  @media (max-width: 800px) {
+    width: 100%;
+    height: 100%;
 
-    iframe{
-      width:100%;
+    iframe {
+      width: 100%;
     }
   }
 `

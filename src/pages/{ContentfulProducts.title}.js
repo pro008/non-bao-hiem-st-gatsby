@@ -9,6 +9,7 @@ import SEO from "../components/SEO"
 import styled from "styled-components"
 import textSplit from "../utils/textSlipt"
 import ProductsV2 from "../components/ProductsV2"
+import { Link } from "gatsby"
 
 const ProductTemplate = ({ data }) => {
   const {
@@ -29,7 +30,7 @@ const ProductTemplate = ({ data }) => {
     })
   }
 
-  const slug = `Nón bảo hiểm sơn tùng mã số ${title}`;
+  const slug = `Nón bảo hiểm sơn tùng mã số ${title}`
 
   return (
     <Layout>
@@ -91,6 +92,9 @@ const ProductTemplate = ({ data }) => {
                     Helmet đã trở thành nhà cung cấp sản phẩm cho rất nhiều
                     doanh nghiệp trong nước lẫn ngoài nước.
                   </p>
+                  <RedirectLink className="text-red" to="/clients">
+                    Xem thêm mẫu của khách hàng
+                  </RedirectLink>
                 </article>
               </Col>
               <Col xs={12} md={5}>
@@ -163,6 +167,16 @@ const HorizonUnderline = styled.hr`
   width: 25%;
   margin-top: 20px;
   margin-bottom: 50px;
+`
+
+const RedirectLink = styled(Link)`
+  font-size: 20px;
+  text-decoration: underline;
+
+  :hover {
+    color: #ed1c24;
+    text-decoration: underline wavy #ed1c24 2px;
+  }
 `
 
 export default ProductTemplate

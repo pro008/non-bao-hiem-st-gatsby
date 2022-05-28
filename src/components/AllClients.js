@@ -20,6 +20,7 @@ const query = graphql`
         }
         productId {
           productTitle
+          title
         }
       }
     }
@@ -34,7 +35,9 @@ const AllClients = () => {
   return (
     <Wrapper>
       <Row>
-        {clients.map(client => <Clients key={client.id} client={client}/>)}
+        {clients.map(client => (
+          <Clients key={client.id} client={client} />
+        ))}
       </Row>
     </Wrapper>
   )

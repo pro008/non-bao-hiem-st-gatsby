@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import slugifyUrl from "../utils/slugifyUrl"
-import { Container, Row, Col } from "react-bootstrap"
+import { Row, Col } from "react-bootstrap"
 import styled from "styled-components"
 
 const ProductDetail = ({ produtcs = [] }) => {

@@ -58,33 +58,33 @@ const SliderForClient = ({ images }) => {
 }
 
 const Wrapper = styled.div`
-  width:100%;
-  position:relative;
+  width: 100%;
+  position: relative;
   z-index: 1;
-  
+
   .custom-caroucel {
-    padding-bottom:20px;
+    padding-bottom: 20px;
   }
 
   button {
-    min-width:30px;
-    min-height:30px;
-    top:calc(100% - 50px);
-    z-index:100;
+    min-width: 30px;
+    min-height: 30px;
+    top: calc(100% - 50px);
+    z-index: 100;
   }
 
   @media screen and (min-width: 1080px) {
-    .react-multiple-carousel__arrow--right{
+    .react-multiple-carousel__arrow--right {
       right: calc(30% + 1px);
     }
-    
-    .react-multiple-carousel__arrow--left{
+
+    .react-multiple-carousel__arrow--left {
       left: calc(30% + 1px);
     }
   }
 
-  button::before{
-    font-size:12px;
+  button::before {
+    font-size: 12px;
   }
 
   .wrapper-caroucel {

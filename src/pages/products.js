@@ -14,7 +14,7 @@ const Products = () => {
 
   return (
     <Layout>
-      <SEO title="Products" description={headerText}/>
+      <SEO title="Products" description={headerText} />
       <main className="page">
         <header>
           <div className="headBodyWrapperSub">
@@ -44,9 +44,8 @@ const Products = () => {
           </p>
           <Container className="div-center mt-60">
             <GatsbyImage
-              className="slider_image"
+              className="slider_image hide-mobile"
               alt="non bao hiem nua dau"
-              className="hide-mobile"
               image={CardImage}
             />
             <div className="card-standard">

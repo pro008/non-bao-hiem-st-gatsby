@@ -1,26 +1,50 @@
 import React from "react"
 import SliderForClient from "./shared/slider_for_client"
 import { Col } from "react-bootstrap"
+import { Link } from "gatsby"
 import styled from "styled-components"
+import slugifyUrl from "../utils/slugifyUrl"
 
 const Clients = ({ client }) => {
   if (client == null) return <></>
-  const { clientsName, images, productId: {productTitle} } = client
+  const {
+    clientsName,
+    images,
+    productId: { productTitle, title },
+  } = client
+  const slug = slugifyUrl(title)
   return (
-    <Wrapper xs={12} md={3}className="center-content">
+    <Wrapper xs={12} md={3} className="center-content">
       <figure>
         <SliderForClient images={images} />
         <hr />
         <figcaption>
-          <p><strong>Mã nón</strong></p>
-          <p>{productTitle || ''}</p>
-          <p><strong>Khách hàng</strong></p>
+          <p>
+            <strong>Mã nón</strong>
+          </p>
+          <p>
+            <RedirectLink className="text-red" to={`/${slug}`}>
+              {productTitle || ""}
+            </RedirectLink>
+          </p>
+          <p>
+            <strong>Khách hàng</strong>
+          </p>
           <p>{clientsName}</p>
         </figcaption>
       </figure>
     </Wrapper>
   )
 }
+
+const RedirectLink = styled(Link)`
+  text-decoration: underline;
+
+  :hover {
+    color: #ed1c24;
+    text-decoration: underline wavy #ed1c24 1px;
+  }
+`
 
 const Wrapper = styled(Col)`
   display: -webkit-flex;
@@ -35,10 +59,10 @@ const Wrapper = styled(Col)`
   margin-bottom: 25px;
   padding-top: 20px;
 
-  hr{
+  hr {
     border-top: 2px solid grey;
-    width:90%;
-    margin:auto;
+    width: 90%;
+    margin: auto;
     margin-bottom: 20px;
   }
 
@@ -64,13 +88,14 @@ const Wrapper = styled(Col)`
     transform: scale(1.1);
     transition: transform 0.4s;
   }
-  
-  figure p:nth-child(1), figure p:nth-child(2){
+
+  figure p:nth-child(1),
+  figure p:nth-child(2) {
     height: fit-content;
-    margin:0px;
+    margin: 0px;
   }
 
-  figcaption{
+  figcaption {
     display: grid;
     grid-template-columns: 40% 60%;
     column-gap: 10px;
@@ -78,21 +103,20 @@ const Wrapper = styled(Col)`
   }
 
   @media screen and (min-width: 768px) {
-    figcaption p{
+    figcaption p {
       font-size: 14px;
     }
   }
 
-
   @media screen and (max-width: 400px) {
-    figure{
-      width:100px
+    figure {
+      width: 100px;
     }
   }
 
   @media screen and (max-width: 960px) {
-    figure{
-      width:150px
+    figure {
+      width: 150px;
     }
   }
 `

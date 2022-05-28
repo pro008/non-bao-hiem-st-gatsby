@@ -11,10 +11,9 @@ const Process = () => {
   const items = data.allContentfulQuyTrinh.nodes
   const headerText = "QUY TRÌNH SẢN XUẤT CÔNG TY SƠN TÙNG"
 
-
   return (
     <Layout>
-      <SEO title="Quy Trình" description={headerText}/>
+      <SEO title="Quy Trình" description={headerText} />
       <main className="page">
         <header>
           <div className="headBodyWrapperSub">
