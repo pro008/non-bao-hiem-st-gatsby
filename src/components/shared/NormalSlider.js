@@ -30,7 +30,7 @@ const NormalSlider = ({ images, needParse }) => {
     <Wrapper>
       <Carousel
         responsive={responsive}
-        ssr
+        ssr={false}
         showDots={true}
         slidesToSlide={1}
         infinite={true}

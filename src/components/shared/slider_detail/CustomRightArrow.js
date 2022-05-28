@@ -18,6 +18,7 @@ const Button = styled.div`
   &:before {
     content: "➜";
     color: white;
+    height: 35px;
   }
 `
 

@@ -1,13 +1,12 @@
 import React from "react"
 import Carousel from "react-multi-carousel"
 import "react-multi-carousel/lib/styles.css"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
-import CustomDot from "./CustomDot"
-import CustomLeftArrow from "./CustomLeftArrow"
-import CustomRightArrow from "./CustomRightArrow"
 
-const SliderDetail = ({ images }) => {
+const SliderForClient = ({ images }) => {
+  if (images == null) return <></>
+
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
@@ -32,27 +31,24 @@ const SliderDetail = ({ images }) => {
       <Carousel
         responsive={responsive}
         ssr={false}
-        showDots={true}
+        showDots={false}
         slidesToSlide={1}
         infinite={true}
         containerClass="custom-caroucel"
         itemClass="image-item"
         deviceType={""}
-        dotListClass="custom-dot"
+        renderButtonGroupOutside={true}
         partialVisible={true}
-        renderDotsOutside={true}
-        customRightArrow={<CustomRightArrow />}
-        customLeftArrow={<CustomLeftArrow />}
-        customDot={<CustomDot smallImages={images} />}
       >
-        {images.map((path, index) => {
+        {images.map((image, index) => {
+          const path = getImage(image)
           return (
             <GatsbyImage
               image={path}
-              width={550}
-              height={550}
-              key={index}
+              width={220}
+              height={220}
               className="about-img"
+              key={index}
             />
           )
         })}
@@ -62,30 +58,33 @@ const SliderDetail = ({ images }) => {
 }
 
 const Wrapper = styled.div`
-  padding-left: 76px;
-
+  width:100%;
+  position:relative;
+  z-index: 1;
+  
   .custom-caroucel {
-    text-align: center;
-    border: 6px solid white;
-    border-radius: 8px;
+    padding-bottom:20px;
   }
 
-  .custom-dot {
-    height: 100%;
-    max-width: 50px;
-    display: block;
-    float: left;
+  button {
+    min-width:30px;
+    min-height:30px;
+    top:calc(100% - 50px);
+    z-index:100;
   }
 
-  .custom-dot div {
-    width: 100%;
-    margin-top: 7px;
-    margin-bottom: 7px;
+  @media screen and (min-width: 1080px) {
+    .react-multiple-carousel__arrow--right{
+      right: calc(30% + 1px);
+    }
+    
+    .react-multiple-carousel__arrow--left{
+      left: calc(30% + 1px);
+    }
   }
 
-  .custom-dot .active {
-    transform: scale(1.2);
-    transition: transform 1.2s;
+  button::before{
+    font-size:12px;
   }
 
   .wrapper-caroucel {
@@ -94,17 +93,7 @@ const Wrapper = styled.div`
 
   @media screen and (max-width: 375px) {
     padding-left: 0px;
-    .custom-dot {
-      display: flex;
-      max-width: 100%;
-      position: inherit;
-    }
-
-    .custom-dot div {
-      margin-left: 4px;
-      margin-right: 4px;
-    }
   }
 `
 
-export default SliderDetail
+export default SliderForClient

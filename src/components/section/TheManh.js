@@ -73,7 +73,7 @@ const TheManh = () => {
       <div className="reverse-order">
         <Carousel
           responsive={responsive}
-          ssr
+          ssr={false}
           arrows={false}
           showDots={true}
           slidesToSlide={1}

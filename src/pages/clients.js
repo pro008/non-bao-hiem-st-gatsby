@@ -4,10 +4,10 @@ import { StaticImage } from "gatsby-plugin-image"
 import { graphql, useStaticQuery } from "gatsby"
 import { Container } from "react-bootstrap"
 import SEO from "../components/SEO"
+import AllClients from "../components/AllClients"
 
 const Client = () => {
   const data = useStaticQuery(query)
-  const items = data.allContentfulGioiThieu.nodes
   const headerText = "KHÁCH HÀNG CỦA CÔNG TY SƠN TÙNG"
 
   return (
@@ -31,9 +31,7 @@ const Client = () => {
           </div>
         </header>
         <Container>
-          <h1>
-            <center>Under maintenance</center>
-          </h1>
+          <AllClients />
         </Container>
       </main>
     </Layout>
