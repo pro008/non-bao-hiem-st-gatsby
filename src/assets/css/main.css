@@ -10833,6 +10833,7 @@ a.text-cyan_lighter_20:hover {
 }
 
 .intro-section__title {
+  margin: 0px;
   font-size: 2.4rem;
   font-weight: 700;
   text-align: center
@@ -20009,8 +20010,10 @@ a.text-cyan_lighter_20:hover {
     top: 75%
   }
   .intro-section__title {
-    font-size: 48px;
-    text-align: left
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    text-align: left;
+    font-weight: bold;
   }
   .intro-section__holder {
     padding-top: 9.9rem

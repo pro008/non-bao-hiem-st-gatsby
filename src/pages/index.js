@@ -1,8 +1,7 @@
 import React from "react"
 import Layout from "../components/Layout"
 import Slider from "../components/header/slider"
-import AllProducts from "../components/AllProducts"
-import ChuyenNganh from "../components/section/ChuyenNganh"
+import About from "../components/section/v2/About"
 import TheManhVideo from "../components/section/TheManhVideo"
 import Brand from "../components/section/Brand"
 import SEO from "../components/SEO"
@@ -15,8 +14,7 @@ export default function Home() {
         <header>
           <Slider />
         </header>
-        <AllProducts />
-        <ChuyenNganh />
+        <About />
         <TheManhVideo />
         <Brand />
       </main>

@@ -7,6 +7,15 @@
   overflow-x: hidden;
 }
 
+.slider_text_content {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center; 
+}
+
 .mt-20{
   margin-top: 20px;
 }
@@ -69,7 +78,7 @@
 
 .headBodyWrapper{
   height: 100vh;
-  overflow: hidden;
+  position:relative;
   clear: both;
 }
 

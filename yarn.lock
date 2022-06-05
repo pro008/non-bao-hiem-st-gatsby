@@ -5640,6 +5640,13 @@
     "minimatch" "^3.0.4"
     "sitemap" "^7.0.0"
 
+"gatsby-plugin-smoothscroll@^1.2.0":
+  "integrity" "sha512-wfIK06xwbNx91nHVg1YJwlLUJc0EmfWqV8KgvlNr6gFa9pqMx5Mprdp5jDRloAi3+9K0dVCybPO8FfaZ0i4HgA=="
+  "resolved" "https://registry.npmjs.org/gatsby-plugin-smoothscroll/-/gatsby-plugin-smoothscroll-1.2.0.tgz"
+  "version" "1.2.0"
+  dependencies:
+    "smoothscroll-polyfill" "^0.4.4"
+
 "gatsby-plugin-styled-components@^5.4.0":
   "integrity" "sha512-YsQJW4nuhuSIRrLRwexXWmrqIgirFWfYVtdhPTIHcrq5VCDW2OkMw/Kn+WNpHt1GUmP+3piKfKtofeF61xKwuw=="
   "resolved" "https://registry.npmjs.org/gatsby-plugin-styled-components/-/gatsby-plugin-styled-components-5.4.0.tgz"
@@ -10864,6 +10871,11 @@
   "integrity" "sha512-Pcz296CK0uGnTf4iNQId79Uv6/5G16t0g0x3OsxWS8qVSOW+JXNnNHKVcuDiMgEGTWyK6zjlWXo2dvzV/FLf9Q=="
   "resolved" "https://registry.npmjs.org/slugify/-/slugify-1.6.4.tgz"
   "version" "1.6.4"
+
+"smoothscroll-polyfill@^0.4.4":
+  "integrity" "sha512-TK5ZA9U5RqCwMpfoMq/l1mrH0JAR7y7KRvOBx0n2869aLxch+gT9GhN3yUfjiw+d/DiF1mKo14+hd62JyMmoBg=="
+  "resolved" "https://registry.npmjs.org/smoothscroll-polyfill/-/smoothscroll-polyfill-0.4.4.tgz"
+  "version" "0.4.4"
 
 "snapdragon-node@^2.0.1":
   "integrity" "sha512-O27l4xaMYt/RSQ5TR3vpWCAB5Kb/czIcqUFOM/C4fYcLnbZUc1PkjTAMjof2pBWaSTwOUd6qUHcFGVGj7aIwnw=="
