@@ -16,6 +16,18 @@
   text-align: center; 
 }
 
+.pl-20{
+  padding-left:20px;
+}
+
+.pl-40{
+  padding-left:40px;
+}
+
+.pl-60{
+  padding-left:60px;
+}
+
 .mt-20{
   margin-top: 20px;
 }

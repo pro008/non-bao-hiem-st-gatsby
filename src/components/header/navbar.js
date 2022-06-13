@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Link } from "gatsby"
+import scrollTo from 'gatsby-plugin-smoothscroll';
 
 const MAX_SCROLL = 0
 const MIN_SCROLL = 100
@@ -73,69 +73,48 @@ const NavigationBar = () => {
             <div className="navbar-collapse__menu" role="navigation">
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <Link to="/about">
-                    <a
-                      className={`nav-link nav_animation`}
-                      data-toggle="collapse"
-                      onClick={() => {
-                        handleActiveNav(!isActive)
-                      }}
-                    >
-                      GIỚI THIỆU
-                    </a>
-                  </Link>
+                  <a
+                    className={`nav-link nav_animation`}
+                    data-toggle="collapse"
+                    onClick={() => {
+                      scrollTo('#about')
+                    }}
+                  >
+                    GIỚI THIỆU
+                  </a>
                 </li>
                 <li className="nav-item">
-                  <Link to="/process">
-                    <a
-                      className={`nav-link nav_animation`}
-                      data-toggle="collapse"
-                      onClick={() => {
-                        handleActiveNav(!isActive)
-                      }}
-                    >
-                      QUY TRÌNH
-                    </a>
-                  </Link>
+                  <a
+                    className={`nav-link nav_animation`}
+                    data-toggle="collapse"
+                    onClick={() => {
+                      scrollTo('#about')
+                    }}
+                  >
+                    QUY TRÌNH
+                  </a>
                 </li>
                 <li className="nav-item">
-                  <Link to="/products">
-                    <a
-                      className={`nav-link nav_animation`}
-                      title="Overflow examples"
-                      onClick={() => {
-                        handleActiveNav(!isActive)
-                      }}
-                    >
-                      SẢN PHẨM
-                    </a>
-                  </Link>
+                  <a
+                    className={`nav-link nav_animation`}
+                    title="Overflow examples"
+                    onClick={() => {
+                      scrollTo('#dich_vu')
+                    }}
+                  >
+                    DỊCH VỤ
+                  </a>
                 </li>
                 <li className="nav-item">
-                  <Link to="/clients/">
-                    <a
-                      className={`nav-link nav_animation`}
-                      title="Overflow examples"
-                      onClick={() => {
-                        handleActiveNav(!isActive)
-                      }}
-                    >
-                      KHÁCH HÀNG
-                    </a>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link to="/contact/">
-                    <a
-                      className={`nav-link nav_animation`}
-                      title="Overflow examples"
-                      onClick={() => {
-                        handleActiveNav(!isActive)
-                      }}
-                    >
-                      LIÊN HÊ
-                    </a>
-                  </Link>
+                  <a
+                    className={`nav-link nav_animation`}
+                    title="Overflow examples"
+                    onClick={() => {
+                      scrollTo('#lien_he')
+                    }}
+                  >
+                    LIÊN HÊ
+                  </a>
                 </li>
               </ul>
             </div>

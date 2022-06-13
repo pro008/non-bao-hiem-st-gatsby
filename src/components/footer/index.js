@@ -7,12 +7,12 @@ import LargeBlackButton from "../shared/large-black-button"
 
 const Footer = () => {
   return (
-    <footer>
+    <footer id="lien_he">
       <Wrapper>
         <Container className="footer_infor">
           <Row>
             <Col xs={12} md={4}>
-              <a to="tel:0937115578">
+              <a href="tel:093307549">
                 <StaticImage
                   src="../../assets/images/icons/phone_number.png"
                   width={50}
@@ -20,12 +20,12 @@ const Footer = () => {
                   alt={"son tung logo"}
                   className={"mb-20"}
                 />
-                <p>0937.11.55.78 (Ms. My)</p>
+                <p>093.307.549 (Mr.Tùng)</p>
               </a>
             </Col>
 
             <Col xs={12} md={4}>
-              <a to="mailto:nonbaohiemsontung@example.com">
+              <a href="songiacong@gmail.com">
                 <StaticImage
                   src="../../assets/images/icons/email.png"
                   width={50}
@@ -33,7 +33,7 @@ const Footer = () => {
                   alt={"email son tung helmade"}
                   className={"mb-20"}
                 />
-                <p>nonbaohiemsontung@gmail.com</p>
+                <p>songiacong@gmail.com</p>
               </a>
             </Col>
 

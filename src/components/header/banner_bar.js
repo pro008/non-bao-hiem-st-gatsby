@@ -5,7 +5,7 @@ import { StaticImage } from "gatsby-plugin-image"
 
 const BannerBar = () => {
   return (
-    <Wrapper>
+    <Wrapper id="about">
       <Row className="custom-row">
         <Col md={12} xs={12}>
           <div>
@@ -14,8 +14,8 @@ const BannerBar = () => {
                 <Box>
                   <StaticImage
                     src="../../assets/images/icons/1.png"
-                    width={60}
-                    height={60}
+                    width={40}
+                    height={40}
                     alt={"Nuoc son Nhap khau"}
                   />
                   <h6 className="text-white ml-1">Nước sơn <br/> Nhập khẩu</h6>
@@ -25,8 +25,8 @@ const BannerBar = () => {
                 <Box>
                   <StaticImage
                     src="../../assets/images/icons/2.png"
-                    width={60}
-                    height={60}
+                    width={40}
+                    height={40}
                     alt={"Nuoc son Nhap khau"}
                   />
                   <h6 className="text-white ml-1">Thợ tay <br/>nghề cao</h6>
@@ -36,8 +36,8 @@ const BannerBar = () => {
                 <Box>
                   <StaticImage
                     src="../../assets/images/icons/3.png"
-                    width={60}
-                    height={60}
+                    width={40}
+                    height={40}
                     alt={"Nuoc son Nhap khau"}
                   />
                   <h6 className="text-white ml-1">Cam kết <br/>chất lượng</h6>
@@ -45,7 +45,6 @@ const BannerBar = () => {
               </Col>
             </Row>
           </div>
-          
         </Col>
       </Row>
     </Wrapper>
@@ -53,15 +52,35 @@ const BannerBar = () => {
 }
 
 const Wrapper = styled.section`
-  margin-right: 30%;
+  margin-right: 50%;
   background-color:red;
   background-attachment: fixed;
-  padding-top: 65px;
-  padding-bottom: 65px;
+  padding-top:40px;
+  padding-bottom: 0px;
+  height: 120px;
   padding-left: 40px;
   position: relative;
-  bottom: 100px;
-  border-radius: 2px;
+  bottom: 70px;
+
+  .custom-row{
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  
+  :after {
+    content: "";
+    position: absolute;
+    left: 100%;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    display: inline-block;
+    line-height: 0;
+    border-width: 60px;
+    border-style: solid;
+    border-color: transparent red red transparent;
+    transform: rotate(180deg);
+}
 
   @media screen and (max-width: 960px) {
     display: none;
@@ -73,8 +92,12 @@ const Box = styled.div`
   }
 
   h6{
-    line-height 30px;
-    font-size: 22px;
+    line-height 22px;
+    font-size: 18px;
+  }
+
+  @media screen and (max-width: 100px) {
+    font-size: 14px;
   }
 `
 

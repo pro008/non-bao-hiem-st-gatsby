@@ -2,10 +2,21 @@ import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import textSplit from "../../utils/textSlipt"
 import { Col } from "react-bootstrap"
+import { graphql, useStaticQuery } from "gatsby"
+import styled from "styled-components"
 
-const CardBlock = ({ cards = [] }) => {
+
+const CardBlock = () => {
+  const data = useStaticQuery(query)
+  const cards = data.allContentfulGioiThieu.nodes
+
   return (
     <>
+      <center>
+        <Wrapper className="mt-60">
+          <span>VỀ CHÚNG TÔI</span>
+        </Wrapper>
+      </center>
       {cards.map((card, index) => {
         const {
           title,
@@ -71,5 +82,38 @@ const CardBlock = ({ cards = [] }) => {
     </>
   )
 }
+
+const Wrapper = styled.div`
+    font-size: 2rem;
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    grid-column-gap: 1.2rem;
+    align-items: center;
+    max-width: 400px;
+
+  ::before, ::after {
+    content: "";
+    display: block;
+    height: 2px;
+    background-color: red;
+  }
+
+`
+
+export const query = graphql`
+  {
+    allContentfulGioiThieu(sort: { fields: position }) {
+      nodes {
+        title
+        description {
+          description
+        }
+        image {
+          gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+    }
+  }
+`
 
 export default CardBlock

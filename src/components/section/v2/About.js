@@ -2,7 +2,7 @@ import React from "react"
 import { Container, Row, Col } from "react-bootstrap"
 import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
-
+import LargeRedTransparentButton from "../../shared/large-red-transparent-button"
 
 const About = () => {
 
@@ -10,9 +10,9 @@ const About = () => {
     <Wrapper>
       <Row>
         <Col md={7} xs={12}>
-          <h3 className="intro-section__title">
-            VỀ CHÚNG TÔI <hr />
-          </h3>
+          <div className="intro-section__title">
+            <span>VỀ CHÚNG TÔI</span>
+          </div>
           <h4 className="mt-40">
             CÔNG TY SƠN TÙNG THÀNH LẬP TỪ NĂM 2010 VỚI NHIỀU NĂM KINH NGHIỆM VỀ NGÀNH SƠN
           </h4>
@@ -32,6 +32,12 @@ const About = () => {
               </ul>
             </Col>
           </Row>
+
+          <div className="mt-40">
+            <LargeRedTransparentButton>
+              Xem thêm
+            </LargeRedTransparentButton>
+          </div>
         </Col>
 
         <Col md={5} xs={12}>
@@ -78,6 +84,27 @@ const About = () => {
 const Wrapper = styled(Container)`
   background-color: white;
   margin-top: 200px;
+
+  .intro-section__title {
+    font-size: 2rem;
+    display: grid;
+    grid-template-columns: 0fr max-content 1fr;
+    grid-column-gap: 0rem;
+    align-items: center;
+    max-width: 400px;
+  }
+
+  .intro-section__title::before,
+  .intro-section__title::after {
+    content: "";
+    display: block;
+    height: 2px;
+    background-color: red;
+  }
+
+  .intro-section__title::after{
+    margin-left: 1.2rem;
+  }
 
   .medalion{
     background-color:red;

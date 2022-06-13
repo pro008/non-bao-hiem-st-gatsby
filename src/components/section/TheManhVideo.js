@@ -4,11 +4,6 @@ import styled from "styled-components"
 const TheManhVideo = () => {
   return (
     <>
-      <h4 className="intro-section__title mt-60">
-        <center>
-          Điểm mạnh cua <span className="text-red">ST HELMET</span>
-        </center>
-      </h4>
       <center className="mt-40">
         <FieldSet>
           <iframe
