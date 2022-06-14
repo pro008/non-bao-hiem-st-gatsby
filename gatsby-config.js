@@ -4,13 +4,13 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Non Bao Hiem Son Tung`,
+    title: `Son Gia Cong Son Tung`,
     author: {
       name: `Phong Vuong`,
       summary: `Contact me through phong.vuong008@gmail.com`,
     },
-    description: `Non bao hiem chat luong cao`,
-    siteUrl: `https://nonbaohiemst.com`,
+    description: `DỊCH VỤ SƠN GIA CÔNG TẤT CẢ MẶT HÀNG`,
+    siteUrl: `https://songiacong.com`,
     social: {
       facebook: `ctysontung`,
     },
