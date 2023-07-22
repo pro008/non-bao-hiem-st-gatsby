@@ -12,6 +12,13 @@ const Layout = ({ children, props }) => {
 
   return (
     <>
+      <noscript>
+        <iframe 
+          src="https://www.googletagmanager.com/ns.html?id=GTM-WNC5GKJP" 
+          height="0" 
+          width="0" 
+          style={{display:'none',visibility:'hidden'}} />
+      </noscript>
       <FloatingButton />
       <Header />
       {children}
