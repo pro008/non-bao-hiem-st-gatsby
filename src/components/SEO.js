@@ -55,6 +55,10 @@ const SEO = ({ description, lang, meta, title }) => {
           property: `og:type`,
           content: `website`,
         },
+        {
+          name: 'zalo-platform-site-verification',
+          content: 'Nu2vSfQHELvah951lPq-UNooXNsGp58hC3S',
+        }
       ].concat(meta)}
     />
   )

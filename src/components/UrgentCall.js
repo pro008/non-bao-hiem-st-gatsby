@@ -3,7 +3,7 @@ import { StaticImage } from "gatsby-plugin-image"
 
 const UrgentCall = () => {
   return (
-    <a id="uptocall-mini" data-toggle="tooltip" data-placement="right" href="tel:093307549">
+    <a id="uptocall-mini" data-toggle="tooltip" data-placement="right" href="tel:0937115578">
       <div className="uptocall-mini-phone">
         <StaticImage
           src="../assets/images/icons/outline_call_white_48dp.png"
