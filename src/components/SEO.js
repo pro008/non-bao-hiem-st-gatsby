@@ -8,11 +8,11 @@
 import React, { useEffect } from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, withPrefix } from "gatsby"
+
 
 const SEO = ({ description, lang, meta, title }) => {
   useEffect(() => {
-    import("../utils/google_tag_manager.js")
   }, [])
 
   const { site } = useStaticQuery(
@@ -55,8 +55,13 @@ const SEO = ({ description, lang, meta, title }) => {
           property: `og:type`,
           content: `website`,
         },
-      ].concat(meta)}
-    />
+        {
+          name: 'zalo-platform-site-verification',
+          content: 'Nu2vSfQHELvah951lPq-UNooXNsGp58hC3S',
+        }
+      ].concat(meta)}>
+        <script src={withPrefix('google_tag_manager.js')} type="text/javascript" />
+    </Helmet>
   )
 }
 
