@@ -61,6 +61,7 @@ const SEO = ({ description, lang, meta, title }) => {
         }
       ].concat(meta)}>
         <script src={withPrefix('google_tag_manager.js')} type="text/javascript" />
+        <script src={'https://sp.zalo.me/plugins/sdk.js'} type="text/javascript" />
     </Helmet>
   )
 }
