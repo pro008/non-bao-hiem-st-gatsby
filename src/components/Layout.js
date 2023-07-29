@@ -8,7 +8,7 @@ import UrgentCall from "./UrgentCall"
 const Layout = ({ children }) => {
   useEffect(() => {
     import("../utils/navbar.js")
-    import("../utils/facebookSDK.js")
+    // import("../utils/facebookSDK.js")
   }, [])
 
   return (
