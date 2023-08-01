@@ -12,7 +12,7 @@ const Footer = () => {
         <Container className="footer_infor">
           <Row>
             <Col xs={12} md={4}>
-              <a href="tel:0903307549">
+              <a href="tel:0937115578">
                 <StaticImage
                   src="../../assets/images/icons/phone_number.png"
                   width={50}
@@ -20,7 +20,7 @@ const Footer = () => {
                   alt={"son tung logo"}
                   className={"mb-20"}
                 />
-                <p>0903.307.549 (Mr.Tùng)</p>
+                <p>0937.115.578 (Mr.Tùng)</p>
               </a>
             </Col>
 
